@@ -1,7 +1,12 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const ModalContext = createContext();
 
 export default function AppContextProvider({ children }) {
-  return <ModalContext.Provider value={{}}>{children}</ModalContext.Provider>;
+  const [isModal, setIsModal] = useState(null);
+  return (
+    <ModalContext.Provider value={{ isModal, setIsModal }}>
+      {children}
+    </ModalContext.Provider>
+  );
 }

@@ -1,0 +1,20 @@
+{
+  "name": {
+    "label": "Full name",
+    "placeholder": "Ex: Jhon Doe",
+    "type": "text",
+    "required": "true"
+  },
+  "email": {
+    "label": "E-mail",
+    "placeholder": "Ex: jhon_doe@yahoo.com",
+    "type": "email",
+    "required": "true"
+  },
+  "password": {
+    "label": "Password",
+    "placeholder": "********",
+    "type": "password",
+    "required": "true"
+  }
+}

@@ -1,20 +1,23 @@
 {
   "name": {
     "label": "Full name",
-    "placeholder": "Ex: Jhon Doe",
+    "placeholder": "Ex: student name",
+    "autoFocus": true,
     "type": "text",
-    "required": "true"
+    "required": true
   },
   "email": {
     "label": "E-mail",
-    "placeholder": "Ex: jhon_doe@yahoo.com",
+    "placeholder": "Ex: student@lms.se",
+    "autoFocus": false,
     "type": "email",
-    "required": "true"
+    "required": true
   },
   "password": {
     "label": "Password",
     "placeholder": "********",
+    "autoFocus": false,
     "type": "password",
-    "required": "true"
+    "required": true
   }
 }

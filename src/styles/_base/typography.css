@@ -17,23 +17,28 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(2.5em, 5vw, 7em);
+  font-size: clamp(2.5rem, 5vw, 5rem);
 }
 
 h3 {
-  font-size: clamp(2em, 5vw, 6em);
+  font-size: clamp(2rem, 5vw, 6rem);
 }
 
 h4 {
-  font-size: clamp(1.8em, 5vw, 2.2em);
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
 }
 
 h5 {
-  font-size: clamp(1.6em, 5vw, 2em);
+  font-size: clamp(1.3rem, 5vw, 2rem);
 }
 
 p,
 a,
-li {
-  font-size: clamp(1.6em, 5vw, 2em);
+li,
+button {
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+label {
+  font-size: 14px;
 }

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import RecoverPassword from "./pages/RecoverPassword";
 
 // files
 import "./styles/style.css";
@@ -15,8 +16,9 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="signip" element={<SignUp />} />
+          <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
+          <Route path="recover-password" element={<RecoverPassword />} />
         </Routes>
       </BrowserRouter>
     </div>

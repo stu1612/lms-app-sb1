@@ -11,5 +11,6 @@
 
 /* organisms */
 @import "./organisms/landingPage.css";
+@import "./organisms/forms.css";
 
 /* templates */

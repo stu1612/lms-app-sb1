@@ -1,0 +1,16 @@
+{
+  "email": {
+    "label": "E-mail",
+    "placeholder": "Ex: student@student.se",
+    "autoFocus": true,
+    "type": "email",
+    "required": true
+  },
+  "password": {
+    "label": "Password",
+    "placeholder": "********",
+    "autoFocus": false,
+    "type": "password",
+    "required": true
+  }
+}

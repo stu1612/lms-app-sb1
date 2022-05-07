@@ -1,5 +1,5 @@
 // NPM packages
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import FormNotice from "../components/FormNotice";
 
@@ -8,32 +8,36 @@ import InputField from "../components/InputField";
 import form from "../data/login.json";
 import { loginUser } from "../firebase/fireAuth";
 import HomeIcon from "../components/HomeIcon";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function Login() {
-  const navigate = useNavigate();
+  // global state
+  const { setUID, checked, setChecked } = useContext(AuthContext);
 
   // local state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Method
+  const navigate = useNavigate();
 
+  // Method
   async function onLogin(event) {
     event.preventDefault();
 
     const returnedUID = await loginUser(email, password);
 
-    // if (returnedUID) {
-    //   setUID(returnedUID);
-    //   returnedUID === admin && navigate("/admin");
-    //   returnedUID !== admin && navigate("/dashboard");
-    // }
+    if (returnedUID) {
+      setUID(returnedUID);
+      navigate("/dashboard");
+      // returnedUID === admin && navigate("/admin");
+      // returnedUID !== admin && navigate("/dashboard");
+    }
   }
 
-  // function handleChange() {
-  //   setChecked(!checked);
-  //   console.log(checked.toString());
-  // }
+  function handleChange() {
+    setChecked(!checked);
+    console.log(checked.toString());
+  }
 
   return (
     <div id="login" className="form-container">
@@ -45,9 +49,8 @@ export default function Login() {
           <InputField setup={form.email} state={[email, setEmail]} />
           <InputField setup={form.password} state={[password, setPassword]} />
           <label>
-            {/* <input type="checkbox" checked={checked} onChange={handleChange} /> */}
             <small>Keep me signed in</small>
-            <input type="checkbox" checked={true} />
+            <input type="checkbox" checked={checked} onChange={handleChange} />
           </label>
           <button className="btn btn-primary">Submit</button>
         </form>

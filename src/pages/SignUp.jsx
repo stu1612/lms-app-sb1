@@ -8,6 +8,7 @@ import form from "../data/signUp.json";
 import { createUser } from "../firebase/fireAuth";
 import { createDocumentWithId } from "../firebase/fireStore";
 import HomeIcon from "../components/HomeIcon";
+import Loader from "../components/Loader";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function SignUp() {
     const payload = await createDocumentWithId("users", newUID, newUser);
 
     if (payload.error) {
-      alert("could not create user");
+      console.log(payload.error);
     } else {
       navigate("/dashboard");
     }

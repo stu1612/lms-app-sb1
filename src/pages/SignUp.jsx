@@ -7,6 +7,7 @@ import validateString from "../scripts/validateString";
 import form from "../data/signUp.json";
 import { createUser } from "../firebase/fireAuth";
 import { createDocumentWithId } from "../firebase/fireStore";
+import HomeIcon from "../components/HomeIcon";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ export default function SignUp() {
 
   return (
     <div id="sign-up" className="form-container">
+      <HomeIcon />
       <div className="form-content">
         <h2>Sign Up</h2>
         <p>Please complete all fields so that we can get you started !</p>

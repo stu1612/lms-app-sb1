@@ -1,11 +1,13 @@
 // NPM packages
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import FormNotice from "../components/FormNotice";
 
 // Project files
 import InputField from "../components/InputField";
 import form from "../data/login.json";
 import { loginUser } from "../firebase/fireAuth";
+import HomeIcon from "../components/HomeIcon";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -35,11 +37,10 @@ export default function Login() {
 
   return (
     <div id="login" className="form-container">
+      <HomeIcon />
       <div className="form-content">
         <h2>Welcome back</h2>
-        <p>
-          Please add in your email and password to access your LMS dashboard
-        </p>
+        <p>Please enter your email and password to access your LMS dashboard</p>
         <form onSubmit={onLogin} className="form-fields">
           <InputField setup={form.email} state={[email, setEmail]} />
           <InputField setup={form.password} state={[password, setPassword]} />
@@ -50,14 +51,11 @@ export default function Login() {
           </label>
           <button className="btn btn-primary">Submit</button>
         </form>
-        <div className="form-fields">
-          <label>
-            <small>Did you forget your password?</small>
-          </label>
-          <Link to="/recover-password" className="btn btn-primary">
-            Reset password
-          </Link>
-        </div>
+        <FormNotice
+          title="Did you forget your password?"
+          link="/recover-password"
+          btn="reset password"
+        />
       </div>
     </div>
   );

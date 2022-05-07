@@ -1,6 +1,7 @@
 // NPM packages
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import FormNotice from "../components/FormNotice";
+import HomeIcon from "../components/HomeIcon";
 
 // Project files
 import InputField from "../components/InputField";
@@ -21,6 +22,7 @@ export default function RecoverPassword() {
 
   return (
     <div id="recover-password" className="form-container">
+      <HomeIcon />
       <div className="form-content">
         <h2>Recover Password</h2>
         <p>
@@ -28,19 +30,15 @@ export default function RecoverPassword() {
           request, check both inbox and spam to make sure you have recieved your
           password instructions.
         </p>
-        <p>Don't forget to check every inbox including the spam folder.</p>
         <form onSubmit={onRecover} className="form-fields">
           <InputField setup={form.email} state={[email, setEmail]} />
           <button className="btn btn-primary">Get new password</button>
         </form>
-        <div className="form-fields">
-          <label>
-            <small>Remebered your password?</small>
-          </label>
-          <Link to="/login" className="btn btn-primary">
-            go back
-          </Link>
-        </div>
+        <FormNotice
+          title="remebered your password"
+          link="/login"
+          btn="go back"
+        />
       </div>
     </div>
   );

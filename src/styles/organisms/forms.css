@@ -5,8 +5,9 @@
   left: 50%;
   position: absolute;
   border-radius: 5px;
-  box-shadow: rgba(235, 233, 233, 0.1) 0px 20px 25px -5px,
-    rgba(245, 244, 244, 0.04) 0px 10px 10px -5px;
+  box-shadow: rgba(233, 231, 231, 0.4) 0px 2px 4px,
+    rgba(166, 165, 165, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .form-content {

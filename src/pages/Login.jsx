@@ -12,7 +12,7 @@ import { AuthContext } from "../contexts/AuthContext";
 
 export default function Login() {
   // global state
-  const { setUID, checked, setChecked } = useContext(AuthContext);
+  const { setUID, admin, checked, setChecked } = useContext(AuthContext);
 
   // local state
   const [email, setEmail] = useState("");
@@ -28,15 +28,13 @@ export default function Login() {
 
     if (returnedUID) {
       setUID(returnedUID);
-      navigate("/dashboard");
-      // returnedUID === admin && navigate("/admin");
-      // returnedUID !== admin && navigate("/dashboard");
+      returnedUID === admin && navigate("/admin");
+      returnedUID !== admin && navigate("/dashboard");
     }
   }
 
   function handleChange() {
     setChecked(!checked);
-    console.log(checked.toString());
   }
 
   return (

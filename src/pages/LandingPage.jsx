@@ -1,9 +1,13 @@
 // npm
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 // files
+import { AuthContext } from "../contexts/AuthContext";
 import img from "../assets/images/landing.png";
+import LoginButtons from "../components/LoginButtons";
+import ReturnToApp from "../components/ReturnToApp";
 
 export default function LandingPage() {
+  const { uid } = useContext(AuthContext);
   return (
     <div className="landing">
       <div className="landing__image">
@@ -11,20 +15,15 @@ export default function LandingPage() {
       </div>
       <div className="landing__content">
         <h1 className="landing__title">
-          Welcome to our LMS Software Programme
+          {!uid ? "Welcome to our LMS Software Programme" : "Welcome back"}
         </h1>
         <p>
-          With our amazing support programme you will gain the skills needed to
-          further your development goals
+          {!uid
+            ? "With our amazing support programme you will gain the skills needed to further your development goals"
+            : "You are still logged in"}
         </p>
-        <div className="landing__buttons">
-          <Link className="btn btn-primary w-100" to="/signup">
-            Sign Up
-          </Link>
-          <Link className="btn btn-primary w-100" to="/login">
-            Login
-          </Link>
-        </div>
+        {!uid && <LoginButtons />}
+        {uid && <ReturnToApp />}
       </div>
     </div>
   );

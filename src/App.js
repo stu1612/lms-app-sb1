@@ -1,29 +1,24 @@
 // npm
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-//pages
-import LandingPage from "./pages/LandingPage";
-import SignUp from "./pages/SignUp";
-import Login from "./pages/Login";
-import RecoverPassword from "./pages/RecoverPassword";
-import Dashboard from "./pages/Dashboard";
-import AdminCategories from "./pages/AdminCategories";
-
+import { useContext, useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
 // files
+import LoggedInRoutes from "./routes/LoggedInRoutes";
+import LoggedOutRoutes from "./routes/LoggedOutRoutes";
+import { AuthContext } from "./contexts/AuthContext";
 import "./styles/style.css";
 
 export default function App() {
+  const { uid, checked } = useContext(AuthContext);
+
+  useEffect(() => {
+    checked && localStorage.setItem("token", JSON.stringify(uid));
+  }, [checked, uid]);
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="login" element={<Login />} />
-          <Route path="recover-password" element={<RecoverPassword />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="admin" element={<AdminCategories />} />
-        </Routes>
+        {uid && <LoggedInRoutes />}
+        {!uid && <LoggedOutRoutes />}
       </BrowserRouter>
     </div>
   );

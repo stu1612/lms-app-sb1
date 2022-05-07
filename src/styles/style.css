@@ -6,6 +6,7 @@
 /* atoms */
 @import "./atoms/button.css";
 @import "./atoms/input.css";
+@import "./atoms/404.css";
 
 /* molecules */
 

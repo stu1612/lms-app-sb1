@@ -1,0 +1,11 @@
+.denied-access {
+  display: flex;
+  flex-direction: column;
+  width: min(95%, 920px);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.denied-access img {
+  width: 300px;
+}

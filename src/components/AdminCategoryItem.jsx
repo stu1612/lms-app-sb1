@@ -9,6 +9,7 @@ import {
 // files
 import { ModalContext } from "../contexts/ModalContext";
 import DeleteCategory from "./forms/DeleteCategory";
+import UpdateCategory from "./forms/UpdateCategory";
 
 export default function AdminCategoryItem({ item }) {
   // global state
@@ -25,7 +26,11 @@ export default function AdminCategoryItem({ item }) {
         <p>{description}</p>
         <div className="icons">
           <FontAwesomeIcon icon={faBookOpenReader} className="icon open" />
-          <FontAwesomeIcon icon={faPenToSquare} className="icon edit" />
+          <FontAwesomeIcon
+            icon={faPenToSquare}
+            className="icon edit"
+            onClick={() => setIsModal(<UpdateCategory item={item} />)}
+          />
           <FontAwesomeIcon
             icon={faCircleMinus}
             className="icon delete"

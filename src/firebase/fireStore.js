@@ -33,6 +33,13 @@ export async function readCollections(path) {
 }
 
 // Update
+export async function updateDocument(path, data) {
+  const id = data.id;
+  const documentPath = doc(fireStore, path, id);
+
+  await setDoc(documentPath, data);
+  return "Succeed modifying document";
+}
 
 // Delete
 export async function deleteDocument(path, id) {

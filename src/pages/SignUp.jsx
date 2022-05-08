@@ -1,5 +1,5 @@
 // NPM packages
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 // Project files
 import InputField from "../components/InputField";
@@ -8,12 +8,17 @@ import form from "../data/signUp.json";
 import { createUser } from "../firebase/fireAuth";
 import { createDocumentWithId } from "../firebase/fireStore";
 import HomeIcon from "../components/HomeIcon";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function SignUp() {
-  const navigate = useNavigate();
+  // global state
+  const { uid, setUID } = useContext(AuthContext);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   async function onSignUp(event) {
     event.preventDefault();
@@ -31,6 +36,7 @@ export default function SignUp() {
     if (payload.error) {
       console.log(payload.error);
     } else {
+      setUID(newUID);
       navigate("/dashboard");
     }
   }

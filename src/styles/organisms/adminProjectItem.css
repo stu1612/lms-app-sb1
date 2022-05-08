@@ -12,6 +12,22 @@
   flex-direction: column;
 }
 
+.item-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon-link {
+  color: rgb(38, 38, 112);
+  margin: 0 1rem;
+}
+
+.icon-file {
+  color: rgb(91, 91, 20);
+  margin: 0 1rem;
+}
+
 .buttons button {
   margin: 1rem;
 }

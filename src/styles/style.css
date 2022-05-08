@@ -14,5 +14,7 @@
 @import "./organisms/modal.css";
 @import "./organisms/landingPage.css";
 @import "./organisms/forms.css";
+@import "./organisms/adminCategoryItem.css";
 
 /* templates */
+@import "./templates/admin.css";

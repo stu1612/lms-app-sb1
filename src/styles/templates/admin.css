@@ -1,0 +1,14 @@
+.admin {
+  width: min(95%, 1200px);
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.admin .icon {
+  font-size: 46px;
+  color: rgb(53, 128, 53);
+  margin: 0 2rem;
+  cursor: pointer;
+}

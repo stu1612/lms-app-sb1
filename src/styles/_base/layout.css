@@ -63,3 +63,18 @@ img {
 .w-90 {
   width: 90%;
 }
+
+.grid {
+  display: grid;
+  grid-template-rows: auto;
+  column-gap: 24px;
+  row-gap: 24px;
+  width: min(95%, 1200px);
+  margin: 0 auto;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

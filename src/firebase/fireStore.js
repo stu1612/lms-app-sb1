@@ -5,6 +5,7 @@ import { addDoc, getDoc, getDocs, setDoc, deleteDoc } from "firebase/firestore";
 // Project files
 import { fireStore } from "./firebase";
 
+// create
 export async function createDocumentWithId(path, id, data) {
   let payload = { data: undefined, error: false };
 
@@ -18,4 +19,15 @@ export async function createDocumentWithId(path, id, data) {
   }
 
   return payload;
+}
+
+// read
+export async function readCollections(path) {
+  const collectionPath = collection(fireStore, path);
+  const snapshot = await getDocs(collectionPath);
+  const documents = snapshot.docs.map((item) => {
+    return { id: item.id, ...item.data() };
+  });
+
+  return documents;
 }

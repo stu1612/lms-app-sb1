@@ -31,3 +31,13 @@ export async function readCollections(path) {
 
   return documents;
 }
+
+// Update
+
+// Delete
+export async function deleteDocument(path, id) {
+  const documentPath = doc(fireStore, path, id);
+
+  await deleteDoc(documentPath);
+  return "Succeed deleting document";
+}

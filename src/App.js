@@ -2,9 +2,12 @@
 import { useContext, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 // files
+import { AuthContext } from "./contexts/AuthContext";
 import LoggedInRoutes from "./routes/LoggedInRoutes";
 import LoggedOutRoutes from "./routes/LoggedOutRoutes";
-import { AuthContext } from "./contexts/AuthContext";
+import Modal from "./components/Modal";
+import ModalContextProvider from "./contexts/ModalContext";
+import AppContextProvider from "./contexts/AppContext";
 import "./styles/style.css";
 
 export default function App() {
@@ -16,10 +19,15 @@ export default function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        {uid && <LoggedInRoutes />}
-        {!uid && <LoggedOutRoutes />}
-      </BrowserRouter>
+      <ModalContextProvider>
+        <AppContextProvider>
+          <BrowserRouter>
+            {uid && <LoggedInRoutes />}
+            {!uid && <LoggedOutRoutes />}
+          </BrowserRouter>
+          <Modal />
+        </AppContextProvider>
+      </ModalContextProvider>
     </div>
   );
 }

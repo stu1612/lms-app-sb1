@@ -11,6 +11,7 @@
 /* molecules */
 
 /* organisms */
+@import "./organisms/modal.css";
 @import "./organisms/landingPage.css";
 @import "./organisms/forms.css";
 

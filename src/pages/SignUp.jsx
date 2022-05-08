@@ -8,7 +8,6 @@ import form from "../data/signUp.json";
 import { createUser } from "../firebase/fireAuth";
 import { createDocumentWithId } from "../firebase/fireStore";
 import HomeIcon from "../components/HomeIcon";
-import Loader from "../components/Loader";
 
 export default function SignUp() {
   const navigate = useNavigate();

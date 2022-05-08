@@ -1,0 +1,16 @@
+{
+  "title": {
+    "autoFocus": true,
+    "label": "Title",
+    "placeholder": "Ex: React",
+    "required": true,
+    "type": "text"
+  },
+  "description": {
+    "autoFocus": false,
+    "label": "Description",
+    "placeholder": "Ex: Become a React superstar by learning these key react topics",
+    "required": true,
+    "type": "text"
+  }
+}

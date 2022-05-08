@@ -48,13 +48,6 @@ export default function AdminProjects() {
     setStatus(2);
   }
 
-  //   const mappedItems = projects.map((item) => (
-  //     <ProjectAdminItem
-  //       key={item.id}
-  //       item={item}
-  //       state={[projects, setProjects]}
-  //     />
-  //   ));
   const mappedItems = projects.map((item) => (
     <AdminProjectItem key={item.id} item={item} />
   ));

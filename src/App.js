@@ -3,11 +3,11 @@ import { useContext, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 // files
 import { AuthContext } from "./contexts/AuthContext";
+import AppContextProvider from "./contexts/AppContext";
 import LoggedInRoutes from "./routes/LoggedInRoutes";
 import LoggedOutRoutes from "./routes/LoggedOutRoutes";
 import Modal from "./components/Modal";
 import ModalContextProvider from "./contexts/ModalContext";
-import AppContextProvider from "./contexts/AppContext";
 import "./styles/style.css";
 
 export default function App() {

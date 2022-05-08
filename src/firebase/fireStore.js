@@ -1,6 +1,6 @@
 // NPM package
 import { doc, collection } from "firebase/firestore";
-import { addDoc, getDoc, getDocs, setDoc, deleteDoc } from "firebase/firestore";
+import { getDocs, setDoc, deleteDoc } from "firebase/firestore";
 
 // Project files
 import { fireStore } from "./firebase";

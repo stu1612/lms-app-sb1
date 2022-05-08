@@ -1,17 +1,12 @@
 // npm
-import { useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 // files
-import { AuthContext } from "../contexts/AuthContext";
 import { readCollections } from "../firebase/fireStore";
 import CategoryItem from "../components/CategoryItem";
 import EmptyItemsMessage from "../components/EmptyItemsMessage";
 import Loader from "../components/Loader";
 
 export default function Dashboard() {
-  const navigate = useNavigate();
-  const { setUID, uid } = useContext(AuthContext);
-
   // local state
   const [courses, setCourses] = useState([]);
   const [status, setStatus] = useState(0);

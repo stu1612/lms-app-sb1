@@ -40,6 +40,7 @@ export default function AdminCategories() {
     setStatus(2);
   }
 
+  // components
   const mappedItems =
     courses &&
     courses.map((item) => <AdminCategoryItem key={item.id} item={item} />);

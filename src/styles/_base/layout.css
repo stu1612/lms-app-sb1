@@ -73,6 +73,13 @@ img {
   margin: 0 auto;
 }
 
+.projects {
+  display: flex;
+  flex-direction: column;
+  width: min(95%, 960px);
+  margin: 0 auto;
+}
+
 @media (min-width: 760px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);

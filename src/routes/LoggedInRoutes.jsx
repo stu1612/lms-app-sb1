@@ -7,6 +7,7 @@ import LandingPage from "../pages/LandingPage";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import AdminCategories from "../pages/AdminCategories";
+import AdminProjects from "../pages/AdminProjects";
 import BadRoute from "../pages/404";
 
 export default function LoggedInRoutes() {
@@ -16,6 +17,9 @@ export default function LoggedInRoutes() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {uid === admin && <Route path="admin" element={<AdminCategories />} />}
+        {uid === admin && (
+          <Route path="admin/:title" element={<AdminProjects />} />
+        )}
         <Route path="login" element={<Login />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="*" element={<BadRoute />} />

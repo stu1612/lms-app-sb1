@@ -1,0 +1,23 @@
+{
+  "subTitle": {
+    "autoFocus": true,
+    "label": "Title",
+    "placeholder": "Ex: React hooks",
+    "required": true,
+    "type": "text"
+  },
+  "description": {
+    "autoFocus": false,
+    "label": "Description",
+    "placeholder": "Ex: learn how to utilise the power of react hooks",
+    "required": true,
+    "type": "text"
+  },
+  "link": {
+    "autoFocus": false,
+    "label": "URL link",
+    "placeholder": "Ex: www.reacthooks.se",
+    "required": false,
+    "type": "text"
+  }
+}

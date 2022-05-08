@@ -1,5 +1,6 @@
 // npm
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBookOpenReader,
@@ -17,6 +18,8 @@ export default function AdminCategoryItem({ item }) {
 
   // properties
   const { title, description } = item;
+  const [data] = useState(item);
+
   return (
     <div id="admin-item" className="admin-item">
       <div className="content">
@@ -25,7 +28,9 @@ export default function AdminCategoryItem({ item }) {
       <div className="actions">
         <p>{description}</p>
         <div className="icons">
-          <FontAwesomeIcon icon={faBookOpenReader} className="icon open" />
+          <Link to={`/admin/${title}`} state={{ data: data }}>
+            <FontAwesomeIcon icon={faBookOpenReader} className="icon open" />
+          </Link>
           <FontAwesomeIcon
             icon={faPenToSquare}
             className="icon edit"

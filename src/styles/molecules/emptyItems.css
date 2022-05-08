@@ -1,0 +1,5 @@
+.empty-items {
+  width: min(95%, 920px);
+  margin: 0 auto;
+  text-align: center;
+}
